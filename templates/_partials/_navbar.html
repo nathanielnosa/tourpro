@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a href="{% url 'index' %}" class="navbar-brand"><span>Fut</span>Tour</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#futtour">
+            <span class="bi bi-list"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="futtour">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{% url 'index' %}" class="nav-link active"><i class="bi bi-home"></i> Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Tours</a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logoutuser' %}" class="nav-link">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Login/Register</a></li>
+                {% endif %}
+                
+                <li class="nav-item"><a href="{% url 'myCart' %}" class="nav-link"><i class="bi bi-cart"></i><span class="badge bg-secondary">{{count}}</span></a></li>
+            </ul>
+            <form class="d-flex px-3" role="search" action="{% url 'search' %}" method="get">
+                <input class="form-control me-2" name="futtour" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+        </div>
+
+    </div>
+</nav>

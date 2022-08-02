@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}FutTour::Search-Page{% endblock title %}
+{% block container %}
+
+<!-- main body -->
+<section id="overview-main" class="my-5 py-5">
+    <div class="container">
+        <div class="h2 my-3">Your Search Result</div>
+        {% if result %}
+        {% for item in result  %}
+        
+        <h3 class="display-3 my-3">{{item.name}}</h3>
+        <div class="">
+            <img src="{{item.main_photo.url}}" alt="" class="img-fluid">
+        </div>
+        <p class="lead my-3">{{item.description}}</p>
+        <div class="bg-black text-white w-50 p-3" id="int">
+            <span><i class="bi bi-clock"></i> {{item.get_day}} days</span> |
+            <span><i class="bi bi-person"></i> Age {{item.age_range}} +</span> |
+            <span><i class="bi bi-map"></i> {{item.destination}}</span>
+        </div>
+        <div class="d-grid my-3">
+            <a href="{% url 'addtocart' main.id %}" class="btn btn-dark p-3">Add To Cart</a>
+        </div>
+        <hr>
+            {% endfor %}
+          
+        {% else %}
+          <p class="bg-danger p-5">No content here, try again </p>
+        {% endif %}
+        
+    </div>
+  </section>
+
+
+{% endblock container %}
+
+
+
