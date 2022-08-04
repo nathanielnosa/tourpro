@@ -26,9 +26,10 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['3.87.218.94','*','127.0.0.1:8000']
+# ALLOWED_HOSTS = ['3.87.218.94','*','127.0.0.1:8000']
+ALLOWED_HOSTS = []
 
 
 # Application definition
