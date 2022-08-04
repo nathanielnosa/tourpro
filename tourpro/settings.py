@@ -10,24 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env()
-environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@zth)+uv9)ndqiq-tn&etmiof82y-*n&yy#sh(j4328i!$@jj7'
-#env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['44.204.24.83','*','127.0.0.1:8000']
 # ALLOWED_HOSTS = []
@@ -110,8 +106,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_SSL = True #EMAIL_USE_TSL
 EMAIL_PORT = 465 #587
-EMAIL_HOST_USER= 'proncode@gmail.com ' #env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD= 'zjsvnydwxhbqeqlo ' #env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER= 'proncode@gmail.com'
+EMAIL_HOST_PASSWORD= 'zjsvnydwxhbqeqlo'
 
 
 # jazzmin
@@ -164,8 +160,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # PAYSTACK
-PAYSTACK_SECRET_KEY = 'sk_test_0317ba2742c61e1e8615e10d1243d11d408002ef' #env('PAYSTACK_SECRET_KEY')
-PAYSTACK_PUBLIC_KEY = 'pk_test_db7c20bff6d8de7179d30d40e76a36005dc8d605' #env('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = 'sk_test_0317ba2742c61e1e8615e10d1243d11d408002ef'
+PAYSTACK_PUBLIC_KEY = 'pk_test_db7c20bff6d8de7179d30d40e76a36005dc8d605'
 
 
 # Default primary key field type
