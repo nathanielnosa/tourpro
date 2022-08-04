@@ -23,7 +23,7 @@ environ.Env.read_env()
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-@zth)+uv9)ndqiq-tn&etmiof82y-*n&yy#sh(j4328i!$@jj7' #env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -109,8 +109,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_SSL = True #EMAIL_USE_TSL
 EMAIL_PORT = 465 #587
-EMAIL_HOST_USER= env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD= env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER= 'proncode@gmail.com ' #env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD= 'zjsvnydwxhbqeqlo ' #env('EMAIL_HOST_PASSWORD')
 
 
 # jazzmin
@@ -163,8 +163,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # PAYSTACK
-PAYSTACK_SECRET_KEY = env('PAYSTACK_SECRET_KEY')
-PAYSTACK_PUBLIC_KEY = env('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = 'sk_test_0317ba2742c61e1e8615e10d1243d11d408002ef' #env('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY = 'pk_test_db7c20bff6d8de7179d30d40e76a36005dc8d605' #env('PAYSTACK_PUBLIC_KEY')
 
 
 # Default primary key field type
