@@ -25,7 +25,8 @@
                     <div class="d-grid mb-4">
                         <button type="submit" class="btn btn-success">Login</button>
                     </div>
-                    <a href="{% url 'register' %}?next=/checkout/">You dont have an account? Register</a>
+                    <a href="{% url 'register' %}?next=/checkout/" class="text-decoration-none me-auto">You dont have an account? Register</a>
+                    <a href="{% url 'reset_password' %}" class="text-decoration-none pe-4">Forget Password?</a>
                 </form>
             </div>
         </div>
